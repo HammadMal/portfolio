@@ -105,7 +105,7 @@ function App() {
         {/* Services Section */}
         <section
           id="services"
-          className="bg-white rounded-lg shadow-md min-h-screen flex flex-col items-center justify-center px-4 md:px-12 text-center"
+          className="bg-white rounded-lg shadow-md min-h-screen flex flex-col items-center justify-center px-4 md:px-12 text-center mt-10 md:mt-0"
         >
           <div className="max-w-4xl">
             <h1 className="text-3xl md:text-4xl font-extrabold text-blue-600 mb-6">My Services!</h1>
