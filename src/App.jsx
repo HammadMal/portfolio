@@ -26,7 +26,7 @@ function App() {
         {/* Home Section */}
         <section
           id="home"
-          className="bg-white rounded-lg shadow-md min-h-screen flex flex-col items-center justify-center px-4 md:px-12"
+          className="bg-white rounded-lg shadow-md min-h-screen flex flex-col items-center justify-center px-4 md:px-12  mt-10 md:mt-0"
         >
           {/* Profile Picture */}
           <div className="w-24 h-24 md:w-48 md:h-48 flex-shrink-0 rounded-full overflow-hidden border-4 border-blue-600 mb-6">
@@ -56,7 +56,7 @@ function App() {
         {/* About Section */}
         <section
           id="about"
-          className="bg-white rounded-lg shadow-md min-h-screen flex flex-col items-center justify-center px-4 md:px-12 text-center"
+          className="bg-white rounded-lg shadow-md min-h-screen flex flex-col items-center justify-center px-4 md:px-12 text-center  mt-10 md:mt-0"
         >
           <div className="max-w-3xl">
             <h1 className="text-3xl md:text-4xl font-extrabold text-blue-600 mb-6">Who am I?</h1>
@@ -138,7 +138,7 @@ function App() {
         {/* Skills Section */}
         <section
           id="skills"
-          className="bg-white rounded-lg shadow-md min-h-screen flex flex-col items-center justify-center px-4 md:px-12 text-center"
+          className="bg-white rounded-lg shadow-md min-h-screen flex flex-col items-center justify-center px-4 md:px-12 text-center  mt-10 md:mt-0"
         >
           <div className="max-w-4xl">
             <h1 className="text-3xl md:text-4xl font-extrabold text-blue-600 mb-6">
@@ -198,21 +198,23 @@ function App() {
 
 
 
-        {/* Education Section */}
+{/* Education Section */}
 <section
   id="education"
-  className="bg-white rounded-lg shadow-md min-h-screen flex flex-col items-center justify-center px-4 md:px-12 text-center"
+  className="bg-white rounded-lg shadow-md min-h-screen flex flex-col items-center justify-center px-4 md:px-12  mt-10 md:mt-0"
 >
   <div className="max-w-4xl">
-    <h1 className="text-3xl md:text-4xl font-extrabold text-blue-600 mb-6 p-4">Education</h1>
+    <h1 className="text-3xl md:text-4xl font-extrabold text-blue-600 mb-6 p-4 text-center">
+      Education
+    </h1>
 
     {/* Habib University */}
-    <div className="mb-8 flex flex-col md:flex-row items-center text-center md:text-left">
-      <div className="w-200 h-25 mr-10 bg-gray-200 rounded-full overflow-hidden mr-4 mb-4 md:mb-0">
+    <div className="mb-8 flex flex-col md:flex-row items-center md:items-start text-center md:text-left">
+      <div className="w-24 h-24 md:w-48 md:h-48 bg-gray-200 rounded-full overflow-hidden mr-0 md:mr-10 mb-4 md:mb-0">
         {/* Logo Placeholder */}
-        <img src={habibuni}  alt="Habib University Logo" className="w-full h-full object-cover " />
+        <img src={habibuni} alt="Habib University Logo" className="w-full h-full object-cover" />
       </div>
-      <div>
+      <div className="flex-1">
         <h2 className="text-2xl font-semibold text-gray-800">Habib University</h2>
         <h3 className="text-lg font-medium text-blue-600">Bachelors in Computer Science</h3>
         <p className="text-gray-600 mt-2">
@@ -224,14 +226,14 @@ function App() {
     </div>
 
     {/* Aga Khan Higher Secondary School System */}
-    <div className="mb-8 flex flex-col md:flex-row items-center text-center md:text-left">
-      <div className="w-200 h-30  rounded-full overflow-hidden mr-4 mb-4 md:mb-0">
-    {/* Logo Placeholder */}
+    <div className="mb-8 flex flex-col md:flex-row items-center md:items-start text-center md:text-left">
+      <div className="w-24 h-24 md:w-48 md:h-48 bg-gray-200 rounded-full overflow-hidden mr-0 md:mr-10 mb-4 md:mb-0">
+        {/* Logo Placeholder */}
         <img src={agakhan} alt="Aga Khan School Logo" className="w-full h-full object-cover" />
       </div>
-      <div>
+      <div className="flex-1">
         <h2 className="text-2xl font-semibold text-gray-800">
-         Aga Khan Higher Secondary School System
+          Aga Khan Higher Secondary School System
         </h2>
         <h3 className="text-lg font-medium text-blue-600">Science General | HSSC</h3>
         <p className="text-gray-600 mt-2">
@@ -242,12 +244,12 @@ function App() {
     </div>
 
     {/* Bai Virbaiji Soparivala Parsi High School */}
-    <div className="flex flex-col md:flex-row items-center text-center md:text-left -ml-5">
-      <div className="w-22 h-25 rounded-full overflow-hidden  mb-4 md:mb-0">
+    <div className="flex flex-col md:flex-row items-center md:items-start text-center md:text-left">
+      <div className="w-24 h-24 md:w-48 md:h-48 bg-gray-200 rounded-full overflow-hidden mr-0 md:mr-10 mb-4 md:mb-0">
         {/* Logo Placeholder */}
         <img src={bvs} alt="BVS High School Logo" className="w-full h-full object-cover" />
       </div>
-      <div>
+      <div className="flex-1">
         <h2 className="text-2xl font-semibold text-gray-800">
           Bai Virbaiji Soparivala Parsi High School
         </h2>
@@ -260,6 +262,8 @@ function App() {
     </div>
   </div>
 </section>
+
+
 
         {/* <section>
 
@@ -279,7 +283,7 @@ function App() {
 
 <section
           id="work"
-          className="bg-white rounded-lg shadow-md min-h-screen flex flex-col items-center justify-center px-4 md:px-12 text-center"
+          className="bg-white rounded-lg shadow-md min-h-screen flex flex-col items-center justify-center px-4 md:px-12 text-center  mt-10 md:mt-0"
         >
           <div className="max-w-4xl">
             <h1 className="text-3xl md:text-4xl font-extrabold text-blue-600 mb-6 p-4">
@@ -374,7 +378,7 @@ function App() {
 
         <section
   id="contact"
-  className="bg-white rounded-lg shadow-md min-h-screen flex flex-col items-center justify-center px-4 md:px-12 text-center"
+  className="bg-white rounded-lg shadow-md min-h-screen flex flex-col items-center justify-center px-4 md:px-12 text-center  mt-10 md:mt-0"
 >
   <div className="max-w-4xl">
     {/* Section Title */}
