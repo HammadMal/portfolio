@@ -39,7 +39,11 @@ function Sidebar({ scrollToSection }) {
     <div
       className={`${
         isOpen ? "w-64" : isMobile ? "w-0" : "w-20"
-      } fixed top-0 left-0 h-full bg-gradient-to-b from-gray-900 to-black text-white shadow-lg transition-all duration-300 flex flex-col`}
+      } fixed top-0 left-0 h-full ${
+        isMobile && isOpen 
+          ? "bg-black-950" // Solid background for mobile when open
+          : "bg-gradient-to-black from-blue-950/80 to-blue-900/80" // Semi-transparent gradient otherwise
+      } text-white shadow-lg transition-all duration-300 flex flex-col backdrop-blur-sm`}
     >
       {/* Header */}
       <div className="flex items-center justify-between p-4 border-b border-gray-700">

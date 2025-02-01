@@ -8,10 +8,10 @@ function ContactForm() {
     e.preventDefault();
     emailjs
       .sendForm(
-        "service_2gnqpji", // Replace with your EmailJS service ID
-        "template_u0pz4uc", // Replace with your EmailJS template ID
+        "service_2gnqpji",
+        "template_u0pz4uc",
         form.current,
-        "-YI9gtyMonMW4acLf" // Replace with your EmailJS user ID
+        "-YI9gtyMonMW4acLf"
       )
       .then(
         (result) => {
@@ -21,46 +21,46 @@ function ContactForm() {
           alert("An error occurred, please try again.");
         }
       );
-    e.target.reset(); // Reset form fields
+    e.target.reset();
   };
 
   return (
     <form
       ref={form}
       onSubmit={sendEmail}
-      className="bg-gray-100 rounded-lg shadow-md p-6 space-y-4 w-full max-w-lg mx-auto"
+      className="bg-blue-900/30 backdrop-blur-sm rounded-lg shadow-lg p-6 space-y-4 w-full max-w-lg mx-auto border border-blue-500/30"
     >
       <input
         type="text"
         name="from_name"
         placeholder="Name"
-        className="bg-white w-full p-3 rounded border border-gray-300 focus:outline-none focus:ring focus:ring-blue-400"
+        className="w-full p-3 rounded bg-blue-800/30 text-white placeholder-blue-300 border border-blue-500/50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
         required
       />
       <input
         type="email"
         name="reply_to"
         placeholder="Email"
-        className="bg-white w-full p-3 rounded border border-gray-300 focus:outline-none focus:ring focus:ring-blue-400"
+        className="w-full p-3 rounded bg-blue-800/30 text-white placeholder-blue-300 border border-blue-500/50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
         required
       />
       <input
         type="text"
         name="subject"
         placeholder="Subject"
-        className="bg-white w-full p-3 rounded border border-gray-300 focus:outline-none focus:ring focus:ring-blue-400"
+        className="w-full p-3 rounded bg-blue-800/30 text-white placeholder-blue-300 border border-blue-500/50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
         required
       />
       <textarea
         name="message"
         rows="5"
         placeholder="Message"
-        className="bg-white w-full p-3 rounded border border-gray-300 focus:outline-none focus:ring focus:ring-blue-400"
+        className="w-full p-3 rounded bg-blue-800/30 text-white placeholder-blue-300 border border-blue-500/50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 resize-none"
         required
       ></textarea>
       <button
         type="submit"
-        className="w-full p-3 bg-blue-600 text-white rounded hover:bg-blue-700 transition-all duration-300"
+        className="w-full p-3 bg-blue-600 text-white rounded hover:bg-blue-700 shadow-lg hover:shadow-xl transition-all duration-300 font-semibold"
       >
         Send Message
       </button>
