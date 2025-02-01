@@ -68,7 +68,7 @@ function App() {
           className=" rounded-lg shadow-md min-h-screen flex flex-col items-center justify-center px-4 md:px-12 text-center  mt-10 md:mt-0"
         >
           <div className="max-w-3xl">
-            <h1 className="text-3xl md:text-4xl font-extrabold text-blue-600 mb-6">Who am I? 🎯</h1>
+            <h1 className="text-3xl md:text-4xl font-extrabold text-blue-500 mb-6">Who am I? 🎯</h1>
             <h2 className="text-lg md:text-xl font-medium text-white mb-4">
               I am a student currently enrolled in Habib University. I am also a Software Developer!
             </h2>
@@ -117,7 +117,7 @@ function App() {
   className="rounded-lg shadow-md min-h-screen flex flex-col items-center justify-center px-4 md:px-12 text-center mt-10 md:mt-0"
 >
   <div className="max-w-4xl">
-    <h1 className="text-3xl md:text-4xl font-extrabold text-blue-600 mb-6">My Services! 👨🏻‍💻</h1>
+    <h1 className="text-3xl md:text-4xl font-extrabold text-blue-500 mb-6">My Services! 👨🏻‍💻</h1>
     <p className="text-white mb-8 text-sm md:text-base leading-relaxed">
       I specialize in delivering cutting-edge solutions to help you achieve your goals. Below are the core services I provide:
     </p>
@@ -149,7 +149,7 @@ function App() {
           className=" rounded-lg shadow-md min-h-screen flex flex-col items-center justify-center px-4 md:px-12 text-center  mt-10 md:mt-0"
         >
           <div className="max-w-4xl">
-            <h1 className="text-3xl md:text-4xl font-extrabold text-blue-600 mb-6">
+            <h1 className="text-3xl md:text-4xl font-extrabold text-blue-500 mb-6">
               My Skills 🛠️
             </h1>
 
@@ -212,7 +212,7 @@ function App() {
   className=" rounded-lg shadow-md min-h-screen flex flex-col items-center justify-center px-4 md:px-12  mt-10 md:mt-0"
 >
   <div className="max-w-4xl">
-    <h1 className="text-3xl md:text-4xl font-extrabold text-blue-600 mb-6 p-4 text-center">
+    <h1 className="text-3xl md:text-4xl font-extrabold text-blue-500 mb-6 p-4 text-center">
       Education 🎓
     </h1>
 
@@ -224,7 +224,7 @@ function App() {
       </div>
       <div className="flex-1">
         <h2 className="text-2xl font-semibold text-white">Habib University</h2>
-        <h3 className="text-lg font-medium text-blue-600">Bachelors in Computer Science</h3>
+        <h3 className="text-lg font-medium text-blue-500">Bachelors in Computer Science</h3>
         <p className="text-white-600 mt-2">
           Pursuing a bachelor's degree in Computer Science, gaining in-depth knowledge of advanced computer science concepts
           and their practical applications. Currently a student committed to mastering both theoretical principles and
@@ -243,7 +243,7 @@ function App() {
         <h2 className="text-2xl font-semibold text-white">
           Aga Khan Higher Secondary School System
         </h2>
-        <h3 className="text-lg font-medium text-blue-600">Science General | HSSC</h3>
+        <h3 className="text-lg font-medium text-blue-500">Science General | HSSC</h3>
         <p className="text-white-600 mt-2">
           Achieved 85% (2019 - 2021) in HSSC, focusing on core subjects such as Computer Science,
           Mathematics, and Physics. Certification recognized by the Aga Khan University Examination Board (AKUEB).
@@ -261,7 +261,7 @@ function App() {
         <h2 className="text-2xl font-semibold text-white">
           Bai Virbaiji Soparivala Parsi High School
         </h2>
-        <h3 className="text-lg font-medium text-blue-600">SSC Pre-Medical</h3>
+        <h3 className="text-lg font-medium text-blue-500">SSC Pre-Medical</h3>
         <p className="text-white-600 mt-2">
           Studied SSC with a strong emphasis on Mathematics, Physics, Chemistry, and Biology. Gained foundational skills
           essential for advanced scientific studies.
@@ -294,7 +294,7 @@ function App() {
           className=" rounded-lg shadow-md min-h-screen flex flex-col items-center justify-center px-4 md:px-12 text-center  mt-10 md:mt-0"
         >
           <div className="max-w-4xl">
-            <h1 className="text-3xl md:text-4xl font-extrabold text-blue-600 mb-6 p-4">
+            <h1 className="text-3xl md:text-4xl font-extrabold text-blue-500 mb-6 p-4">
               Projects 🚀
             </h1>
 
@@ -313,13 +313,13 @@ function App() {
               <div className="flex space-x-4">
                 <a
                   href="https://lnkd.in/eT5wmKSK"
-                  className="text-blue-600 underline hover:text-blue"
+                  className="text-blue-500 underline hover:text-blue"
                 >
                   Web App
                 </a>
                 <a
                   href="https://lnkd.in/eSRZ6znK"
-                  className="text-blue-600 underline hover:text-blue"
+                  className="text-blue-500 underline hover:text-blue"
                 >
                   Mobile App
                 </a>
@@ -340,7 +340,7 @@ function App() {
               </p>
               <a
                 href="https://github.com/HammadMal/HU-Gym-and-Recreation-Portal---Database-Systems"
-                className="text-blue-600 underline hover:text-blue"
+                className="text-blue-500 underline hover:text-blue"
               >
                 GitHub Repository
               </a>
@@ -360,7 +360,7 @@ function App() {
               </p>
               <a
                 href="https://github.com/breehaqasim/Pacman-Pursuit---OOP"
-                className="text-blue-600 underline hover:text-blue"
+                className="text-blue-500 underline hover:text-blue"
               >
                 GitHub Repository
               </a>
@@ -390,7 +390,7 @@ function App() {
 >
   <div className="max-w-4xl">
     {/* Section Title */}
-    <h1 className="text-3xl md:text-4xl font-extrabold text-blue-600 mb-6">
+    <h1 className="text-3xl md:text-4xl font-extrabold text-blue-500 mb-6">
       Contact Me! 📧
     </h1>
 
