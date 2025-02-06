@@ -33,7 +33,7 @@ function App() {
   return (
 
     <div>
-      <AnimatedBackground animationName="quantumField" 
+      <AnimatedBackground animationName="cosmicDust" 
        blendMode="normal"
        style={{ opacity: 0.3 }} 
        
