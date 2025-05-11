@@ -257,20 +257,7 @@ const AboutSection = () => {
           className="text-center mb-10"
           variants={itemVariants}
         >
-          <motion.div
-            className="inline-block mb-4 bg-blue-600/20 p-4 rounded-full"
-            animate={{ 
-              rotate: [0, 10, 0, -10, 0],
-              scale: [1, 1.1, 1, 1.1, 1] 
-            }}
-            transition={{ 
-              duration: 5, 
-              repeat: Infinity,
-              repeatType: "loop" 
-            }}
-          >
             <span className="text-5xl">🎯</span>
-          </motion.div>
           <motion.h1
             className="text-4xl md:text-5xl font-bold text-blue-500"
           >

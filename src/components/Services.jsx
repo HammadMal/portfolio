@@ -151,83 +151,153 @@ const ServicesSection = () => {
         {/* Services Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
           {services.map((service) => (
-            <motion.div
-              key={service.id}
-              className={`rounded-xl overflow-hidden cursor-pointer relative ${
-                selectedService === service.id ? "ring-2 ring-blue-500" : ""
-              }`}
-              variants={serviceCardVariants}
-              whileHover={{ 
-                y: -10,
-                transition: { duration: 0.3 }
-              }}
-              onClick={() => setSelectedService(
-                selectedService === service.id ? null : service.id
-              )}
-              onMouseEnter={() => setHoveredService(service.id)}
-              onMouseLeave={() => setHoveredService(null)}
-            >
-              {/* Gradient border */}
-              <div className={`h-2 bg-gradient-to-r ${service.color}`}></div>
-              
-              <div className="p-6 bg-blue-950/30 backdrop-blur-sm border border-blue-500/20 h-full">
-                <div className="flex items-start justify-between mb-4">
-                  <span className="text-4xl">{service.icon}</span>
-                  <motion.div
-                    className="w-8 h-8 rounded-full flex items-center justify-center bg-blue-900/50"
-                    animate={{ rotate: selectedService === service.id ? 180 : 0 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <svg 
-                      xmlns="http://www.w3.org/2000/svg" 
-                      className="h-4 w-4 text-blue-300" 
-                      fill="none" 
-                      viewBox="0 0 24 24" 
-                      stroke="currentColor"
+            <React.Fragment key={service.id}>
+              <motion.div
+                className={`rounded-xl overflow-hidden cursor-pointer relative ${
+                  selectedService === service.id ? "ring-2 ring-blue-500" : ""
+                }`}
+                variants={serviceCardVariants}
+                whileHover={{ 
+                  y: -10,
+                  transition: { duration: 0.3 }
+                }}
+                onClick={() => setSelectedService(
+                  selectedService === service.id ? null : service.id
+                )}
+                onMouseEnter={() => setHoveredService(service.id)}
+                onMouseLeave={() => setHoveredService(null)}
+              >
+                {/* Gradient border */}
+                <div className={`h-2 bg-gradient-to-r ${service.color}`}></div>
+                
+                <div className="p-6 bg-blue-950/30 backdrop-blur-sm border border-blue-500/20 h-full">
+                  <div className="flex items-start justify-between mb-4">
+                    <span className="text-4xl">{service.icon}</span>
+                    <motion.div
+                      className="w-8 h-8 rounded-full flex items-center justify-center bg-blue-900/50"
+                      animate={{ rotate: selectedService === service.id ? 180 : 0 }}
+                      transition={{ duration: 0.3 }}
                     >
-                      <path 
-                        strokeLinecap="round" 
-                        strokeLinejoin="round" 
-                        strokeWidth={2} 
-                        d="M19 9l-7 7-7-7" 
-                      />
-                    </svg>
-                  </motion.div>
-                </div>
-                
-                <h3 className="text-xl font-semibold text-white mb-2">{service.title}</h3>
-                <p className="text-gray-300 text-sm">{service.shortDesc}</p>
-                
-                {/* Hover overlay effect */}
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-indigo-600/20 pointer-events-none flex items-center justify-center"
-                  initial={{ opacity: 0 }}
-                  animate={{ 
-                    opacity: hoveredService === service.id && selectedService !== service.id ? 0.7 : 0
-                  }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <motion.span 
-                    className="text-white font-medium px-4 py-2 rounded-full bg-blue-500/50 backdrop-blur-sm"
-                    initial={{ scale: 0.8, opacity: 0 }}
+                      <svg 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        className="h-4 w-4 text-blue-300" 
+                        fill="none" 
+                        viewBox="0 0 24 24" 
+                        stroke="currentColor"
+                      >
+                        <path 
+                          strokeLinecap="round" 
+                          strokeLinejoin="round" 
+                          strokeWidth={2} 
+                          d="M19 9l-7 7-7-7" 
+                        />
+                      </svg>
+                    </motion.div>
+                  </div>
+                  
+                  <h3 className="text-xl font-semibold text-white mb-2">{service.title}</h3>
+                  <p className="text-gray-300 text-sm">{service.shortDesc}</p>
+                  
+                  {/* Hover overlay effect */}
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-indigo-600/20 pointer-events-none flex items-center justify-center"
+                    initial={{ opacity: 0 }}
                     animate={{ 
-                      scale: hoveredService === service.id && selectedService !== service.id ? 1 : 0.8,
-                      opacity: hoveredService === service.id && selectedService !== service.id ? 1 : 0
+                      opacity: hoveredService === service.id && selectedService !== service.id ? 0.7 : 0
                     }}
                     transition={{ duration: 0.3 }}
                   >
-                  </motion.span>
-                </motion.div>
-              </div>
-            </motion.div>
+                    <motion.span 
+                      className="text-white font-medium px-4 py-2 rounded-full bg-blue-500/50 backdrop-blur-sm"
+                      initial={{ scale: 0.8, opacity: 0 }}
+                      animate={{ 
+                        scale: hoveredService === service.id && selectedService !== service.id ? 1 : 0.8,
+                        opacity: hoveredService === service.id && selectedService !== service.id ? 1 : 0
+                      }}
+                      transition={{ duration: 0.3 }}
+                    >
+                    </motion.span>
+                  </motion.div>
+                </div>
+              </motion.div>
+
+              {/* Mobile-only expanded content */}
+              <AnimatePresence>
+                {selectedService === service.id && (
+                  <motion.div
+                    className="md:hidden col-span-1 bg-blue-950/30 backdrop-blur-sm border border-blue-500/20 rounded-xl overflow-hidden"
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <div className="p-6">
+                      <div className="flex flex-col gap-6">
+                        <div>
+                          <h3 className="text-xl font-bold text-white mb-4">
+                            {service.title}
+                          </h3>
+                          <p className="text-gray-300 mb-6">
+                            {service.fullDesc}
+                          </p>
+                          
+                          <h4 className="text-lg font-semibold text-blue-400 mb-3">
+                            Features & Benefits
+                          </h4>
+                          <ul className="space-y-2 mb-6">
+                            {service.features.map((feature, index) => (
+                              <motion.li
+                                key={index}
+                                className="flex items-start"
+                                initial={{ opacity: 0, x: -20 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: index * 0.1 }}
+                              >
+                                <span className="text-blue-500 mr-2">✓</span>
+                                <span className="text-gray-300">{feature}</span>
+                              </motion.li>
+                            ))}
+                          </ul>
+                        </div>
+                        
+                        <div>
+                          <h4 className="text-lg font-semibold text-blue-400 mb-4">
+                            Technologies Used
+                          </h4>
+                          <div className="grid grid-cols-2 gap-4">
+                            {service.techs.map((tech, index) => (
+                              <motion.div
+                                key={index}
+                                className="bg-blue-900/30 p-4 rounded-lg flex flex-col items-center"
+                                initial={{ opacity: 0, scale: 0.8 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ delay: index * 0.1 }}
+                                whileHover={{ y: -5 }}
+                              >
+                                <img 
+                                  src={tech.logo} 
+                                  alt={tech.name} 
+                                  className="w-10 h-10 mb-2"
+                                />
+                                <span className="text-sm text-gray-300">{tech.name}</span>
+                              </motion.div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </React.Fragment>
           ))}
         </div>
-        
-        {/* Expanded service details */}
+
+        {/* Desktop-only expanded service details */}
         <AnimatePresence>
           {selectedService && (
             <motion.div
-              className="bg-blue-950/30 backdrop-blur-sm border border-blue-500/20 rounded-xl overflow-hidden mb-16"
+              className="hidden md:block bg-blue-950/30 backdrop-blur-sm border border-blue-500/20 rounded-xl overflow-hidden mb-16"
               initial={{ opacity: 0, y: 50, height: 0 }}
               animate={{ opacity: 1, y: 0, height: "auto" }}
               exit={{ opacity: 0, y: 50, height: 0 }}

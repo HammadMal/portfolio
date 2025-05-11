@@ -256,33 +256,7 @@ const HomeSection = ({ picture }) => {
           </motion.div>
         </motion.div>
       </div>
-      
-{/* Scroll indicator */}
-{/* Scroll indicator */}
-<motion.div 
-  className="absolute bottom-20 left-1/2 -translate-x-1/2"
-  initial={{ opacity: 0, y: -20 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ delay: 1, duration: 0.5 }}
->
-  <motion.div 
-    className="w-8 h-12 rounded-full border-2 border-blue-500 flex justify-center p-2"
-    animate={{ y: [0, 10, 0] }}
-    transition={{ duration: 1.5, repeat: Infinity }}
-  >
-    <motion.div 
-      className="w-1 h-2 bg-blue-500 rounded-full"
-      animate={{ 
-        y: [0, 8, 0],
-        opacity: [0, 1, 0]
-      }}
-      transition={{ duration: 1.5, repeat: Infinity }}
-    />
-  </motion.div>
-
-  {/* Centered text */}
-  <p className="text-blue-400 text-sm mt-2 whitespace-nowrap absolute left-1/2 -translate-x-1/2">Scroll Down</p>
-</motion.div>
+    
 
 
     </motion.section>
