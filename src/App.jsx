@@ -33,9 +33,9 @@ function App() {
   return (
 
     <div>
-      <AnimatedBackground animationName="quantumField" 
+      <AnimatedBackground animationName="cosmicDust" 
        blendMode="normal"
-       style={{ opacity: 0.2 }} 
+       style={{ opacity: 0.3 }} 
        
        />
        <div className="text-white flex flex-col md:flex-row">
