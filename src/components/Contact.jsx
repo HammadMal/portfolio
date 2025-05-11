@@ -192,7 +192,7 @@ const ContactSection = () => {
                   scale: 1.05,
                   boxShadow: "0 0 20px rgba(59, 130, 246, 0.3)"
                 }}
-                className="flex items-start p-5 bg-blue-900/20 backdrop-blur-sm border border-blue-500/20 rounded-xl transition-all duration-300 block"
+                className="flex items-center p-5 bg-blue-900/20 backdrop-blur-sm border border-blue-500/20 rounded-xl transition-all duration-300 block min-h-[100px]"
               >
                 <motion.div 
                   className="w-12 h-12 rounded-full bg-blue-600/20 flex items-center justify-center text-2xl mr-4 flex-shrink-0"
@@ -203,9 +203,9 @@ const ContactSection = () => {
                 >
                   {item.icon}
                 </motion.div>
-                <div className="flex-1">
+                <div className="flex-1 min-w-0">
                   <h3 className="text-lg font-medium text-white mb-1">{item.label}</h3>
-                  <p className="text-blue-300">{item.value}</p>
+                  <p className="text-blue-300 truncate">{item.value}</p>
                 </div>
               </motion.a>
             ))}
