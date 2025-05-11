@@ -1,5 +1,10 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import resumeAIImage from "../assets/ResumeAI.jpg";
+import schedImage from "../assets/sched.png";
+import welcomeImage from "../assets/welcome.jpg";
+import huImage from "../assets/hu.jpg";
+import riscImage from "../assets/risc.jpg";
 
 const ProjectsSection = () => {
   const [expandedProject, setExpandedProject] = useState(null);
@@ -42,7 +47,7 @@ const ProjectsSection = () => {
       links: [
         { text: "Web App", url: "https://www.resume-ai.site", icon: "🌐" }
       ],
-      image: "/src/assets/ResumeAI.jpg",
+      image: resumeAIImage,
       imageAlt: "ResumeAI application screenshot",
       showImage: true,
       bgColor: "from-blue-600 to-indigo-500"
@@ -60,7 +65,7 @@ const ProjectsSection = () => {
         { text: "Web App", url: "https://sched-u-track-web-and-app-dev.vercel.app/login", icon: "🌐" },
         { text: "Mobile App", url: "https://github.com/HammadMal/SchedUTrack-Mobile-Version", icon: "📱" }
       ],
-      image: "/src/assets/sched.png",
+      image: schedImage,
       imageAlt: "ShedUTrack scheduler application interface",
       showImage: true,
       bgColor: "from-blue-600 to-indigo-500"
@@ -77,7 +82,7 @@ const ProjectsSection = () => {
       links: [
         { text: "GitHub Repo", url: "https://github.com/breehaqasim/Pacman-Pursuit---OOP", icon: "⚙️" }
       ],
-      image: "/src/assets/welcome.jpg",
+      image: welcomeImage,
       imageAlt: "ShedUTrack scheduler application interface",
       showImage: true,
       bgColor: "from-yellow-500 to-orange-500"
@@ -94,7 +99,7 @@ const ProjectsSection = () => {
       links: [
         { text: "GitHub Repo", url: "https://github.com/HammadMal/HU-Gym-and-Recreation-Portal---Database-Systems", icon: "⚙️" }
       ],
-      image: "/src/assets/hu.jpg",
+      image: huImage,
       imageAlt: "ShedUTrack scheduler application interface",
       showImage: true,
       bgColor: "from-green-600 to-teal-500"
@@ -109,7 +114,7 @@ const ProjectsSection = () => {
       category: "hardware",
       featured: false,
       links: [],
-      image: "/src/assets/risc.jpg",
+      image: riscImage,
       imageAlt: "ShedUTrack scheduler application interface",
       showImage: true,
       bgColor: "from-purple-600 to-pink-500"
@@ -276,7 +281,7 @@ const ProjectsSection = () => {
                   
                   {/* Expand/collapse button */}
                   <button 
-                    className="text-blue-400 text-sm hover:text-blue-300 transition-colors mt-2 mb-4 flex items-center"
+                    class="text-blue-400 text-sm hover:text-blue-300 transition-colors mt-2 mb-4 flex items-center"
                     onClick={(e) => {
                       e.stopPropagation();
                       setExpandedProject(expandedProject === project.id ? null : project.id);
