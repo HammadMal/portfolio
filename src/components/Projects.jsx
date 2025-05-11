@@ -62,7 +62,7 @@ const ProjectsSection = () => {
       category: "web",
       featured: true,
       links: [
-        { text: "Web App", url: "https://sched-u-track-web-and-app-dev.vercel.app/login", icon: "🌐" },
+        { text: "Web App", url: "https://sched-u-track-web-and-app-dev.vercel.app", icon: "🌐" },
         { text: "Mobile App", url: "https://github.com/HammadMal/SchedUTrack-Mobile-Version", icon: "📱" }
       ],
       image: schedImage,
