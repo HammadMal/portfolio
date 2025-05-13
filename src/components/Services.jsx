@@ -9,7 +9,8 @@ import { img } from "framer-motion/client";
 const reactLogo = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg";
 const nodeLogo = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg";
 const expressLogo = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg";
-const reactNativeLogo = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"; // Using React logo as placeholder
+const reactNativeLogo = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg";
+const tailwindlogo = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" // Using React logo as placeholder
 
 const ServicesSection = () => {
   const [selectedService, setSelectedService] = useState(null);
@@ -58,7 +59,7 @@ const ServicesSection = () => {
         { name: "Node.js", logo: nodeLogo },
         { name: "Express.js", logo: expressLogo },
         { name: "MongoDB", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
-        { name: "Tailwind CSS", logo: tailwind }
+        { name: "Tailwind CSS", logo: tailwindlogo }
       ]
     },
     {
