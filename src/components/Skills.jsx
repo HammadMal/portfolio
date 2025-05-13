@@ -36,12 +36,12 @@ const Skills = () => { // Changed from SkillsSection to Skills to match the expo
       icon: "🎨",
       color: "from-blue-500 to-cyan-400",
       skills: [
-        { name: "HTML", level: 90, icon: "📄" },
-        { name: "CSS/SCSS", level: 85, icon: "🎨" },
-        { name: "Tailwind CSS", level: 90, icon: "💨" },
-        { name: "React-Strap", level: 80, icon: "🔧" },
-        { name: "Material-UI", level: 80, icon: "🧩" },
-        { name: "ReactJS", level: 85, icon: "⚛️" }
+        { name: "HTML", level: 90, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
+        { name: "CSS/SCSS", level: 85, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
+        { name: "Tailwind CSS", level: 90, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" },
+        { name: "React-Strap", level: 80, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" },
+        { name: "Material-UI", level: 80, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg" },
+        { name: "ReactJS", level: 85, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" }
       ],
     },
     {
@@ -50,10 +50,10 @@ const Skills = () => { // Changed from SkillsSection to Skills to match the expo
       icon: "🔧",
       color: "from-green-500 to-emerald-400",
       skills: [
-        { name: "NodeJS", level: 85, icon: "📦" },
-        { name: "Express", level: 80, icon: "🚂" },
-        { name: "React-Native", level: 75, icon: "📱" },
-        { name: "Android Studio", level: 70, icon: "🤖" }
+        { name: "NodeJS", level: 85, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
+        { name: "Express", level: 80, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
+        { name: "React-Native", level: 75, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+        { name: "Android Studio", level: 70, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/androidstudio/androidstudio-original.svg" }
       ],
     },
     {
@@ -62,10 +62,10 @@ const Skills = () => { // Changed from SkillsSection to Skills to match the expo
       icon: "💾",
       color: "from-purple-500 to-pink-400",
       skills: [
-        { name: "SQL Server", level: 80, icon: "🗄️" },
-        { name: "SQLite", level: 75, icon: "📊" },
-        { name: "MongoDB", level: 85, icon: "🍃" },
-        { name: "Firebase", level: 80, icon: "🔥" }
+        { name: "SQL Server", level: 80, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" },
+        { name: "SQLite", level: 75, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" },
+        { name: "MongoDB", level: 85, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
+        { name: "Firebase", level: 80, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" }
       ],
     },
     {
@@ -74,9 +74,9 @@ const Skills = () => { // Changed from SkillsSection to Skills to match the expo
       icon: "💻",
       color: "from-red-500 to-orange-400",
       skills: [
-        { name: "JavaScript", level: 90, icon: "📜" },
-        { name: "Python", level: 85, icon: "🐍" },
-        { name: "C/C++", level: 80, icon: "⚙️" }
+        { name: "JavaScript", level: 90, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
+        { name: "Python", level: 85, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
+        { name: "C/C++", level: 80, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" }
       ],
     },
     {
@@ -85,8 +85,8 @@ const Skills = () => { // Changed from SkillsSection to Skills to match the expo
       icon: "📚",
       color: "from-yellow-500 to-amber-400",
       skills: [
-        { name: "PyQT", level: 75, icon: "🧰" },
-        { name: "DB Designer", level: 80, icon: "📐" }
+        { name: "PyQT", level: 75, icon: "https://upload.wikimedia.org/wikipedia/commons/e/e6/Python_and_Qt.svg" },
+        { name: "DB Designer", level: 80, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" }
       ],
     }
   ];
@@ -204,7 +204,11 @@ const Skills = () => { // Changed from SkillsSection to Skills to match the expo
                 whileHover={{ scale: 1.05 }}
               >
                 <div className="flex items-center mb-4">
-                  <span className="text-2xl mr-3">{skill.icon}</span>
+                  <img 
+                    src={skill.icon} 
+                    alt={skill.name} 
+                    className="w-8 h-8 mr-3"
+                  />
                   <h3 className="text-xl font-semibold text-white">{skill.name}</h3>
                 </div>
                 <div className="mt-4">
