@@ -48,8 +48,8 @@ const LocationMap = () => {
 
 const ContactSection = () => {
   const [formState, setFormState] = useState({
-    name: "",
-    email: "",
+    from_name: "",
+    reply_to: "",
     subject: "",
     message: ""
   });
@@ -98,7 +98,7 @@ const ContactSection = () => {
       .then(
         (result) => {
           setStatus({ success: true, message: "Message sent successfully! I'll get back to you soon." });
-          setFormState({ name: "", email: "", subject: "", message: "" });
+          setFormState({ from_name: "", reply_to: "", subject: "", message: "" });
           setLoading(false);
         },
         (error) => {
@@ -334,7 +334,7 @@ const ContactSection = () => {
                     type="text"
                     id="name"
                     name="from_name"
-                    value={formState.name}
+                    value={formState.from_name}
                     onChange={handleInputChange}
                     className="w-full p-3 bg-blue-900/20 border border-blue-500/30 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
                     required
@@ -351,7 +351,7 @@ const ContactSection = () => {
                     type="email"
                     id="email"
                     name="reply_to"
-                    value={formState.email}
+                    value={formState.reply_to}
                     onChange={handleInputChange}
                     className="w-full p-3 bg-blue-900/20 border border-blue-500/30 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
                     required
