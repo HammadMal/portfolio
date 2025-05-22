@@ -88,6 +88,16 @@ const Skills = () => { // Changed from SkillsSection to Skills to match the expo
         { name: "PyQT", level: 75, icon: "https://upload.wikimedia.org/wikipedia/commons/e/e6/Python_and_Qt.svg" },
         { name: "DB Designer", level: 80, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" }
       ],
+    },
+    {
+      id: "devops",
+      name: "DevOps",
+      icon: "⚙️",
+      color: "from-indigo-500 to-blue-400",
+      skills: [
+        { name: "Docker", level: 80, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
+        { name: "Kubernetes", level: 75, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" }
+      ],
     }
   ];
 
@@ -290,7 +300,9 @@ const getSkillDescription = (skillName) => {
     "Python": "Strong foundation in Python programming with experience in various libraries.",
     "C/C++": "Solid understanding of low-level programming concepts and memory management.",
     "PyQT": "Experience building desktop applications with Python and Qt framework.",
-    "DB Designer": "Proficient in database modeling and schema design."
+    "DB Designer": "Proficient in database modeling and schema design.",
+    "Docker": "Skilled in containerization, image creation, and Docker Compose for multi-container applications.",
+    "Kubernetes": "Experience with container orchestration, deployment strategies, and cluster management."
   };
   
   return descriptions[skillName] || "Proficient in using this technology for various projects.";
