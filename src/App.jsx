@@ -32,6 +32,8 @@ function App() {
   baseColor={793508}       // 0xc14a4 decimal
   blurFactor={0.5}
   speed={1.5}
+  scaleMobile={4}              // Mobile scale
+
   zoom={0.9}
 />
 
