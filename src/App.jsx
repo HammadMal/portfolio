@@ -11,6 +11,8 @@ import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import VantaBackground from "./components/VantaBackground";
 
+import { AnimatedBackground } from "animated-backgrounds";
+
 function App() {
   const scrollToSection = (id) => {
     document.getElementById(id).scrollIntoView({ behavior: "smooth" });
@@ -18,29 +20,14 @@ function App() {
 
   return (
     <div className="min-h-screen relative">
-      {/* Vanta.js FOG Background with exact settings from URL */}
-<VantaBackground
-  effect="FOG"
-  mouseControls={true}
-  touchControls={true}
-  gyroControls={false}
-  minHeight={200}
-  minWidth={200}
-  highlightColor={0}
-  midtoneColor={0}
-  lowlightColor={3043243}  // 0x2e0ebb decimal
-  baseColor={793508}       // 0xc14a4 decimal
-  blurFactor={0.5}
-  speed={1.5}
-  scale={1.0}              // Desktop scale
-  scaleTablet={1.0}        // Tablet scale  
-  scaleMobile={2}              // Mobile scale
 
-  zoom={0.9}
-/>
+      <AnimatedBackground animationName="cosmicDust" 
+       blendMode="soft-light
+"   style={{ opacity: 0.5 }}  // Add any additional CSS styles
+ />
+
 
       
-      {/* Content overlay */}
       <div className="relative z-10 text-white flex flex-col md:flex-row">
         <Sidebar scrollToSection={scrollToSection} />
 
