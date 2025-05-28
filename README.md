@@ -162,6 +162,7 @@ portfolio/
 npm run build
 ```
 
+The built files will be in the `dist` folder, ready for deployment.
 
 ## 📧 Contact Form Setup
 
@@ -248,4 +249,4 @@ While this is a personal portfolio, suggestions and feedback are welcome! Feel f
 
 ---
 
-**Built with ❤️ by Hammad Mali
+**Built with ❤️ by Hammad Malik**
