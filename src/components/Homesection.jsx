@@ -58,54 +58,9 @@ const HomeSection = ({ picture }) => {
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
     >
-      {/* Transparent background with particles */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 opacity-30">
-          {particles.map((particle) => (
-            <motion.div
-              key={particle.id}
-              className="absolute w-2 h-2 rounded-full bg-blue-500"
-              initial={{ 
-                left: `${particle.x * 100}%`, 
-                top: `${particle.y * 100}%`,
-                opacity: 0.5 + Math.random() * 0.5
-              }}
-              animate={{ 
-                y: [0, 300, 0],
-                x: [0, Math.random() * 100 - 50, 0],
-                opacity: [0.2, 0.8, 0.2]
-              }}
-              transition={{ 
-                repeat: Infinity, 
-                duration: 20 + particle.speed * 30,
-                ease: "linear",
-                delay: particle.id * 0.2
-              }}
-              style={{
-                width: `${particle.size}px`,
-                height: `${particle.size}px`
-              }}
-            />
-          ))}
-        </div>
-      </div>
+     
       
-      {/* Interactive cursor follower */}
-      {isHovering && (
-        <motion.div
-          className="hidden md:block fixed w-40 h-40 rounded-full border-2 border-blue-500/30 pointer-events-none z-10"
-          animate={{
-            x: cursorPosition.x - 80,
-            y: cursorPosition.y - 80,
-            scale: [1, 1.2, 1],
-          }}
-          transition={{
-            x: { type: "spring", stiffness: 100, damping: 30 },
-            y: { type: "spring", stiffness: 100, damping: 30 },
-            scale: { duration: 2, repeat: Infinity }
-          }}
-        />
-      )}
+    
 
       <div className="container mx-auto max-w-5xl z-10 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-16">
         {/* Left side with text content */}

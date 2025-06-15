@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import FadeContent from "./FadeContent";
 
 const AboutSection = () => {
   const [activeTab, setActiveTab] = useState("about");
@@ -30,6 +31,7 @@ const AboutSection = () => {
       emoji: "👨‍💻",
       content: (
         <>
+        
           <div className="flex items-center justify-center md:justify-start mb-6">
             <div className="bg-blue-600/20 p-3 rounded-full mr-4">
               <span className="text-4xl">👨‍💻</span>
@@ -242,6 +244,8 @@ const AboutSection = () => {
   };
 
   return (
+    <FadeContent blur={true} duration={1000} easing="ease-out" initialOpacity={0}>
+
     <motion.section
       id="about"
       initial="hidden"
@@ -335,6 +339,7 @@ const AboutSection = () => {
         </div>
       </motion.div>
     </motion.section>
+    </FadeContent>
   );
 };
 
