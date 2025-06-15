@@ -9,11 +9,6 @@ import Skills from "./components/Skills";
 import Education from "./components/Education";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
-import VantaBackground from "./components/VantaBackground";
-import Aurora from './components/Aurora';
-
-import SplashCursor from "./components/Splashcursor";
-
 import Particles from "./components/Particles";
 
 function App() {
@@ -32,7 +27,6 @@ function App() {
           amplitude={2}
           speed={0.5}
         /> */}
-        {/* <SplashCursor /> */}
 
         <div style={{ width: '100%', height: '600px', position: 'relative' }}>
   <Particles
