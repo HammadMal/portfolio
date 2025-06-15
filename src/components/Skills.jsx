@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import FadeContent from "./FadeContent";
 
 const Skills = () => { // Changed from SkillsSection to Skills to match the export
   const [hoveredSkill, setHoveredSkill] = useState(null);
@@ -142,6 +143,8 @@ const Skills = () => { // Changed from SkillsSection to Skills to match the expo
   };
 
   return (
+    <FadeContent blur={true} duration={1500} easing="ease-out" initialOpacity={0}>
+
     <motion.section
       id="skills"
       initial="hidden"
@@ -276,6 +279,7 @@ const Skills = () => { // Changed from SkillsSection to Skills to match the expo
         </motion.div>
       </div>
     </motion.section>
+    </FadeContent>
   );
 };
 
@@ -303,9 +307,11 @@ const getSkillDescription = (skillName) => {
     "DB Designer": "Proficient in database modeling and schema design.",
     "Docker": "Skilled in containerization, image creation, and Docker Compose for multi-container applications.",
     "Kubernetes": "Experience with container orchestration, deployment strategies, and cluster management."
+    
   };
   
   return descriptions[skillName] || "Proficient in using this technology for various projects.";
+
 };
 
 export default Skills;

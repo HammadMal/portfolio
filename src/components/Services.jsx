@@ -4,6 +4,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import tailwind from "../assets/tailwind.png"; // Assuming you have a tailwind logo in your assets
 import { img } from "framer-motion/client";
 
+import FadeContent from "./FadeContent";
+
 // Import tech logos (assuming these exist in the assets directory)
 // You may need to adjust the imports based on actual file locations
 const reactLogo = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg";
@@ -103,6 +105,8 @@ const ServicesSection = () => {
   ];
 
   return (
+    <FadeContent blur={true} duration={1000} easing="ease-out" initialOpacity={0}>
+
     <motion.section
       id="services"
       className="min-h-screen py-16 md:py-24 px-6"
@@ -476,6 +480,7 @@ const ServicesSection = () => {
         </motion.div>
       </div>
     </motion.section>
+    </FadeContent>
   );
 };
 

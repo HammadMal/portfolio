@@ -6,6 +6,8 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css'; // Import Leaflet CSS
 import L from 'leaflet'; // Import Leaflet for custom marker icons
 
+import FadeContent from "./FadeContent";
+
 // Leaflet uses images for its markers which need to be handled properly in React
 // This is a fix for the marker icon issue
 const LocationMap = () => {
@@ -134,6 +136,8 @@ const ContactSection = () => {
   ];
 
   return (
+    <FadeContent blur={true} duration={1000} easing="ease-out" initialOpacity={0}>
+
     <motion.section
       id="contact"
       className="min-h-screen py-16 md:py-24 px-6"
@@ -560,6 +564,7 @@ const ContactSection = () => {
         </motion.div>
       </div>
     </motion.section>
+    </FadeContent>
   );
 };
 
