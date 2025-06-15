@@ -10,6 +10,7 @@ import Education from "./components/Education";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Particles from "./components/Particles";
+import Aurora from "./components/Aurora";
 
 function App() {
   const scrollToSection = (id) => {
@@ -20,29 +21,30 @@ function App() {
     <>
 
       {/* Aurora with fixed positioning to stay centered during scroll */}
-      <div className="fixed inset-0 z-0 flex items-center justify-center pointer-events-none">
-        {/* <Aurora
-          colorStops={["#3A29FF", "#FF94B4", "#FF3232"]}
-          blend={1}
-          amplitude={2}
-          speed={0.5}
-        /> */}
-
-        <div style={{ width: '100%', height: '600px', position: 'relative' }}>
-  <Particles
-    particleColors={['#ffffff', '#ffffff']}
-    particleCount={1500}
-    particleSpread={10}
-    speed={0.1}
-    particleBaseSize={30}
-    moveParticlesOnHover={true}
-    alphaParticles={false}
-    disableRotation={false}
-  />
+<div className="fixed inset-0 z-0 flex items-center justify-center pointer-events-none">
+  {/* Aurora as base layer */}
+  <div className="absolute inset-0">
+<Aurora
+  colorStops={["#1E40AF", "#3730A3", "#6B21A8"]}
+  blend={1}
+  amplitude={0.3}
+  speed={1}
+/>
+  </div>
+  
+  <div className="absolute inset-0" style={{ width: '100%', height: '100vh' }}>
+    <Particles
+      particleColors={['#60A5FA', '#818CF8', '#A78BFA']}
+      particleCount={2000}
+      particleSpread={5}
+      speed={0.05}
+      particleBaseSize={15}
+      moveParticlesOnHover={false}
+      alphaParticles={false}
+      disableRotation={false}
+    />
+  </div>
 </div>
-
-
-      </div>
       
       <div className="min-h-screen relative">
         {/* Vanta.js FOG Background with exact settings from URL */}
