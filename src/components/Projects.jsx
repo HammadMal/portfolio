@@ -6,6 +6,8 @@ import welcomeImage from "../assets/welcome.jpg";
 import huImage from "../assets/hu.jpg";
 import riscImage from "../assets/risc.jpg";
 
+import FadeContent from "./FadeContent";
+
 const ProjectsSection = () => {
   const [expandedProject, setExpandedProject] = useState(null);
   const [hoveredProject, setHoveredProject] = useState(null);
@@ -129,6 +131,8 @@ const ProjectsSection = () => {
       : projects.filter(project => project.category === filter);
 
   return (
+    <FadeContent blur={true} duration={1000} easing="ease-out" initialOpacity={0}>
+
     <motion.section
       id="work"
       className="min-h-screen py-16 md:py-24 px-6"
@@ -363,6 +367,8 @@ const ProjectsSection = () => {
         </motion.div>
       </div>
     </motion.section>
+
+    </FadeContent>
   );
 };
 

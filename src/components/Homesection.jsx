@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 
+import AnimatedContent from "./AnimatedContent";
+
 const HomeSection = ({ picture }) => {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
@@ -49,6 +51,18 @@ const HomeSection = ({ picture }) => {
   }));
 
   return (
+<AnimatedContent
+  distance={100}
+  direction="vertical"
+  reverse={false}
+  duration={0.8}
+  ease="power3.out"
+  initialOpacity={0}
+  animateOpacity={true}
+  scale={1}
+  threshold={0.1}
+  delay={0}
+>
     <motion.section
       id="home"
       className="min-h-screen relative flex flex-col items-center justify-center px-6 overflow-hidden"
@@ -215,6 +229,9 @@ const HomeSection = ({ picture }) => {
 
 
     </motion.section>
+
+    </AnimatedContent>
+
   );
 };
 

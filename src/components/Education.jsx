@@ -6,6 +6,8 @@ import habibUniLogo from "../assets/logo.jpg";
 import agaKhanLogo from "../assets/akhss.png";
 import bvsLogo from "../assets/bvslogo.png";
 
+import FadeContent from "./FadeContent"; // Assuming you have a FadeContent component
+
 const EducationSection = () => {
   const [selectedEducation, setSelectedEducation] = useState(null);
   const [hoveredEducation, setHoveredEducation] = useState(null);
@@ -112,6 +114,8 @@ const EducationSection = () => {
   ];
 
   return (
+    <FadeContent blur={true} duration={1000} easing="ease-out" initialOpacity={0}>
+
     <motion.section
       id="education"
       className="min-h-screen py-16 md:py-24 px-6"
@@ -453,6 +457,7 @@ const EducationSection = () => {
         </motion.div>
       </div>
     </motion.section>
+    </FadeContent>
   );
 };
 
