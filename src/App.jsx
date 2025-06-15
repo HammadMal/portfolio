@@ -12,6 +12,10 @@ import Contact from "./components/Contact";
 import VantaBackground from "./components/VantaBackground";
 import Aurora from './components/Aurora';
 
+import SplashCursor from "./components/Splashcursor";
+
+import Particles from "./components/Particles";
+
 function App() {
   const scrollToSection = (id) => {
     document.getElementById(id).scrollIntoView({ behavior: "smooth" });
@@ -19,14 +23,31 @@ function App() {
 
   return (
     <>
+
       {/* Aurora with fixed positioning to stay centered during scroll */}
       <div className="fixed inset-0 z-0 flex items-center justify-center pointer-events-none">
-        <Aurora
+        {/* <Aurora
           colorStops={["#3A29FF", "#FF94B4", "#FF3232"]}
           blend={1}
           amplitude={2}
           speed={0.5}
-        />
+        /> */}
+        {/* <SplashCursor /> */}
+
+        <div style={{ width: '100%', height: '600px', position: 'relative' }}>
+  <Particles
+    particleColors={['#ffffff', '#ffffff']}
+    particleCount={1500}
+    particleSpread={10}
+    speed={0.1}
+    particleBaseSize={30}
+    moveParticlesOnHover={true}
+    alphaParticles={false}
+    disableRotation={false}
+  />
+</div>
+
+
       </div>
       
       <div className="min-h-screen relative">
@@ -48,9 +69,13 @@ function App() {
           gyroControls={false}         // Disable gyro
         /> */}
 
+        
+
         {/* Content overlay */}
+        
         <div className="relative z-10 text-white flex flex-col md:flex-row">
           <Sidebar scrollToSection={scrollToSection} />
+          
 
           <main className="flex-1 md:ml-64 p-4 md:p-6">
             <HomeSection picture={picture} id="home" />
@@ -60,6 +85,8 @@ function App() {
             <Education id="education" />
             <Projects id="work" />
             <Contact id="contact" />
+
+
           </main>
         </div>
       </div>
