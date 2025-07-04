@@ -17,6 +17,12 @@ const tailwindlogo = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwin
 const ServicesSection = () => {
   const [selectedService, setSelectedService] = useState(null);
   const [hoveredService, setHoveredService] = useState(null);
+
+  const scrollToSection = (id) => {
+    document.querySelector(id).scrollIntoView({ behavior: "smooth" });
+  };  
+
+  
   
   // Animation variants
   const containerVariants = {
@@ -371,7 +377,9 @@ const ServicesSection = () => {
                             boxShadow: "0 0 15px rgba(59, 130, 246, 0.5)"
                           }}
                           whileTap={{ scale: 0.95 }}
-                          onClick={() => window.location.href = "#contact"}
+                          onClick={() => scrollToSection("#contact")
+
+                          }
                         >
                           Discuss Your Project
                         </motion.button>
