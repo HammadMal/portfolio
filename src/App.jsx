@@ -32,7 +32,7 @@ function App() {
 />
   </div>
   
-  <div className="absolute inset-0" style={{ width: '100%', height: '100vh' }}>
+  {/* <div className="absolute inset-0" style={{ width: '100%', height: '100vh' }}>
     <Particles
       particleColors={['#60A5FA', '#818CF8', '#A78BFA']}
       particleCount={2000}
@@ -43,7 +43,7 @@ function App() {
       alphaParticles={false}
       disableRotation={false}
     />
-  </div>
+  </div> */}
 </div>
       
       <div className="min-h-screen relative">
