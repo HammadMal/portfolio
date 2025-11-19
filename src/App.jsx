@@ -73,16 +73,16 @@ function App() {
           <Sidebar scrollToSection={scrollToSection} />
           
 
-          <main className="flex-1 md:ml-64 p-4 md:p-6">
-            <HomeSection picture={picture} id="home" />
-            <AboutSection id="about"/>
-            <Services id="services" />
-            <Skills id="skills" />
-            <Education id="education" />
-            <Projects id="work" />
-            <Contact id="contact" />
-
-
+          <main className="flex-1 md:ml-64 px-6 md:px-12 lg:px-16">
+            <div className="max-w-7xl mx-auto">
+              <HomeSection picture={picture} id="home" />
+              <AboutSection id="about"/>
+              <Services id="services" />
+              <Skills id="skills" />
+              <Education id="education" />
+              <Projects id="work" />
+              <Contact id="contact" />
+            </div>
           </main>
         </div>
       </div>

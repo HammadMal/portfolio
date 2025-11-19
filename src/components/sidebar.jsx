@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
   HomeIcon, 
@@ -17,6 +17,8 @@ const Sidebar = ({ scrollToSection }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
+  const isScrollingProgrammatically = useRef(false);
+  const scrollTimeoutRef = useRef(null);
   
   // Check for mobile screens on mount and resize
   useEffect(() => {
@@ -36,29 +38,70 @@ const Sidebar = ({ scrollToSection }) => {
   
   // Handle scroll to update active section
   useEffect(() => {
-    const handleScroll = () => {
+    const updateActiveSection = () => {
       const sections = document.querySelectorAll("section[id]");
       let currentActiveSection = "home";
-      
+      let minDistance = Infinity;
+
+      // Find the section closest to the viewport top
       sections.forEach(section => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
-        
-        if (window.scrollY >= sectionTop - 200 && 
-            window.scrollY < sectionTop + sectionHeight - 200) {
+        const scrollPosition = window.scrollY + 250; // Offset for better detection
+
+        // Check if scroll position is within this section
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
           currentActiveSection = section.getAttribute("id");
+        } else {
+          // Calculate distance to section for fallback
+          const distance = Math.abs(scrollPosition - sectionTop);
+          if (distance < minDistance) {
+            minDistance = distance;
+            if (distance < 300) { // Within reasonable range
+              currentActiveSection = section.getAttribute("id");
+            }
+          }
         }
       });
-      
+
       setActiveSection(currentActiveSection);
     };
-    
+
+    const handleScroll = () => {
+      // During programmatic scrolling, detect when scroll ends
+      if (isScrollingProgrammatically.current) {
+        // Clear previous timeout
+        if (scrollTimeoutRef.current) {
+          clearTimeout(scrollTimeoutRef.current);
+        }
+
+        // Set new timeout - if no scroll event for 150ms, scrolling has ended
+        scrollTimeoutRef.current = setTimeout(() => {
+          isScrollingProgrammatically.current = false;
+          scrollTimeoutRef.current = null;
+          // Update active section once scrolling ends
+          updateActiveSection();
+        }, 150);
+
+        return;
+      }
+
+      updateActiveSection();
+    };
+
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (scrollTimeoutRef.current) {
+        clearTimeout(scrollTimeoutRef.current);
+      }
+    };
   }, []);
 
   // Handle navigation click
   const handleNavClick = (id) => {
+    // Set flag to prevent scroll listener from updating during smooth scroll
+    isScrollingProgrammatically.current = true;
     setActiveSection(id);
     scrollToSection(id);
     if (isMobile) setIsOpen(false);
@@ -78,7 +121,7 @@ const Sidebar = ({ scrollToSection }) => {
   // Sidebar animation variants
   const sidebarVariants = {
     open: {
-      width: isMobile ? "200px" : "240px",
+      width: isMobile ? "200px" : "256px",
       transition: {
         type: "spring",
         stiffness: 400,
@@ -239,14 +282,6 @@ const Sidebar = ({ scrollToSection }) => {
                       >
                         {label}
                       </motion.span>
-                      
-                      {activeSection === id && (
-                        <motion.div
-                          className="w-1.5 h-1.5 rounded-full bg-blue-400 ml-auto"
-                          layoutId="activeIndicator"
-                          transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                        />
-                      )}
                     </motion.button>
                   </motion.li>
                 ))}
