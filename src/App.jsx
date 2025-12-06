@@ -29,13 +29,13 @@ function App() {
  <LightPillar
     topColor="#5227FF"
     bottomColor="#FF9FFC"
-    intensity={1}         // Lower intensity
+    intensity={0.9}         // Lower intensity
     rotationSpeed={0.3}
     glowAmount={0.003}
     pillarWidth={3.0}
     pillarHeight={0.4}
     noiseIntensity={0.5}
-    pillarRotation={85}
+    pillarRotation={90}
     interactive={false}
     mixBlendMode="screen"   // Screen blend for softer look
   />

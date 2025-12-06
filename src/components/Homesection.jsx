@@ -99,7 +99,7 @@ const HomeSection = ({ picture }) => {
             transition={{ duration: 0.5, delay: 0.3 }}
           >
             Hammad{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r text-white">
               Malik
             </span>
           </motion.h1>
@@ -125,7 +125,7 @@ const HomeSection = ({ picture }) => {
           </div>
           
           <motion.p 
-            className="text-gray-300 text-base md:text-lg mb-10"
+            className="text-white-500 text-base md:text-lg mb-10"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.6 }}
