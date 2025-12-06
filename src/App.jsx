@@ -9,8 +9,10 @@ import Skills from "./components/Skills";
 import Education from "./components/Education";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
-import Particles from "./components/Particles";
+// import Particles from "./components/Particles";
 import Aurora from "./components/Aurora";
+import LightPillar from './components/LightPillar';
+
 
 function App() {
   const scrollToSection = (id) => {
@@ -23,14 +25,21 @@ function App() {
       {/* Aurora with fixed positioning to stay centered during scroll */}
 <div className="fixed inset-0 z-0 flex items-center justify-center pointer-events-none">
   {/* Aurora as base layer */}
-  <div className="absolute inset-0">
-<Aurora
-  colorStops={["#1E40AF", "#3730A3", "#6B21A8"]}
-  blend={1}
-  amplitude={0.3}
-  speed={1}
-/>
-  </div>
+    {/* <div style={{ width: '100%', height: '600px', position: 'relative' }}> */}
+ <LightPillar
+    topColor="#5227FF"
+    bottomColor="#FF9FFC"
+    intensity={1}         // Lower intensity
+    rotationSpeed={0.3}
+    glowAmount={0.003}
+    pillarWidth={3.0}
+    pillarHeight={0.4}
+    noiseIntensity={0.5}
+    pillarRotation={85}
+    interactive={false}
+    mixBlendMode="screen"   // Screen blend for softer look
+  />
+    {/* </div> */}
   
   {/* <div className="absolute inset-0" style={{ width: '100%', height: '100vh' }}>
     <Particles
