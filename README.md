@@ -47,6 +47,8 @@ portfolio/
 │   ├── hammad.png           # Profile picture
 │   ├── mycv.pdf            # Resume/CV
 │   └── vite.svg            # Vite logo
+├── .env                     # Environment variables (not in git)
+├── .env.example             # Environment variables template
 ├── src/
 │   ├── assets/             # Images and static assets
 │   │   ├── picture.jpg     # Main profile picture
@@ -145,8 +147,11 @@ portfolio/
    ```
 
 3. **Set up environment variables**
-   - Configure EmailJS credentials in `src/components/Contact.jsx`
-   - Update service IDs and template IDs as needed
+   - Copy `.env.example` to `.env`
+     ```bash
+     cp .env.example .env
+     ```
+   - Update the `.env` file with your EmailJS credentials (see setup instructions below)
 
 4. **Start the development server**
    ```bash
@@ -168,17 +173,35 @@ The built files will be in the `dist` folder, ready for deployment.
 
 To set up the contact form functionality:
 
-1. Create an account on [EmailJS](https://www.emailjs.com/)
-2. Create a service and email template
-3. Update the configuration in `src/components/Contact.jsx`:
-   ```javascript
-   emailjs.sendForm(
-     "your_service_id",
-     "your_template_id", 
-     formRef.current,
-     "your_public_key"
-   )
+1. **Create an account on [EmailJS](https://www.emailjs.com/)**
+   - Sign up for a free account
+
+2. **Create a service**
+   - Go to Email Services and add a new service
+   - Connect your email provider (Gmail, Outlook, etc.)
+   - Copy the Service ID
+
+3. **Create an email template**
+   - Go to Email Templates and create a new template
+   - Use these variables in your template:
+     - `{{from_name}}` - Sender's name
+     - `{{reply_to}}` - Sender's email
+     - `{{subject}}` - Email subject
+     - `{{message}}` - Message content
+   - Copy the Template ID
+
+4. **Get your Public Key**
+   - Go to Account → General
+   - Copy your Public Key
+
+5. **Update your `.env` file**
+   ```env
+   VITE_SERVICE_ID=your_service_id_here
+   VITE_TEMPLATE_ID=your_template_id_here
+   VITE_PUBLIC_KEY=your_public_key_here
    ```
+
+**Note**: Never commit your `.env` file to version control. It's already included in `.gitignore`.
 
 ## 🎨 Customization
 

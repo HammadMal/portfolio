@@ -7,6 +7,15 @@ import 'leaflet/dist/leaflet.css'; // Import Leaflet CSS
 import L from 'leaflet'; // Import Leaflet for custom marker icons
 
 import FadeContent from "./FadeContent";
+const service_id = import.meta.env.VITE_SERVICE_ID;
+const template_id = import.meta.env.VITE_TEMPLATE_ID;
+const public_key = import.meta.env.VITE_PUBLIC_KEY;
+
+// console.log('Service ID:', service_id);
+// console.log('Template ID:', template_id);
+// console.log('Public Key:', public_key);
+
+
 
 // Leaflet uses images for its markers which need to be handled properly in React
 // This is a fix for the marker icon issue
@@ -92,10 +101,10 @@ const ContactSection = () => {
     
     emailjs
       .sendForm(
-        "service_2gnqpji",
-        "template_u0pz4uc",
+        service_id,
+        template_id,
         formRef.current,
-        "-YI9gtyMonMW4acLf"
+        public_key
       )
       .then(
         (result) => {
